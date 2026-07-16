@@ -1,0 +1,5 @@
+.gemini/
+.tempmediaStorage/
+*.log
+.DS_Store
+Thumbs.db

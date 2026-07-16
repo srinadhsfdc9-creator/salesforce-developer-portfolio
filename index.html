@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srinadh | Senior Salesforce Developer — Enterprise Solutions</title>
+    <meta name="description" content="Senior Salesforce Developer with 10+ years of experience. Apex, LWC, Integrations, Sales Cloud, Service Cloud, and Agentforce. Available for freelance and consulting.">
+    <meta name="keywords" content="Salesforce Developer, Apex, LWC, Lightning Web Components, API Integrations, Sales Cloud, Service Cloud, Agentforce, Freelance">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Aurora Background -->
+    <div class="aurora-bg" aria-hidden="true">
+        <div class="aurora a1"></div>
+        <div class="aurora a2"></div>
+        <div class="aurora a3"></div>
+        <div class="aurora a4"></div>
+    </div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <!-- Scroll Progress + Cursor -->
+    <div id="cursor-glow" aria-hidden="true"></div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="siteHeader">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="#home" class="logo" aria-label="SalesforceTools.in — Go to home">
+                    <span class="logo-bracket">&lt;</span><span class="logo-main">SalesforceTools</span><span class="logo-dot">.in</span><span class="logo-bracket">/&gt;</span>
+                </a>
+
+                <ul class="nav-links" id="navMenu" role="list">
+                    <li><a href="#home"           class="nav-link active" id="nl-home">Home</a></li>
+                    <li><a href="#about"          class="nav-link" id="nl-about">About</a></li>
+                    <li><a href="#skills"         class="nav-link" id="nl-skills">Skills</a></li>
+                    <li><a href="#projects"       class="nav-link" id="nl-projects">Projects</a></li>
+                    <li><a href="#certifications" class="nav-link" id="nl-certs">Certifications</a></li>
+                </ul>
+
+                <div class="nav-end">
+                    <a href="#contact" class="btn btn-primary btn-sm nav-cta">
+                        Let's Talk
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </a>
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- ==================== HERO ==================== -->
+        <section id="home" class="hero-section" aria-label="Introduction">
+            <div class="container">
+                <div class="hero-grid">
+
+                    <!-- Left: Headline (Cyberpunk Style) -->
+                    <div class="hero-content cyber-neon-style">
+                        <div class="avail-pill" role="status" aria-live="polite">
+                            <span class="avail-dot" aria-hidden="true"></span>
+                            Available for Freelance Projects
+                        </div>
+
+                        <div class="cyber-accent-wrapper">
+                            <h1 class="hero-title">
+                                Salesforce<br>
+                                <span class="grad-text">Developer</span>
+                            </h1>
+
+                            <p class="hero-sub-headline">10+ Years of Enterprise Experience</p>
+
+                            <p class="hero-desc">
+                                Helping businesses build, integrate and optimise Salesforce solutions with Apex, Lightning Web Components, Sales Cloud, Service Cloud and AI-powered automation.
+                            </p>
+                        </div>
+
+                        <div class="hero-actions">
+                            <a href="#contact" class="btn btn-cyber-primary" id="hero-hire-btn">
+                                Hire Me
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="#projects" class="btn btn-cyber-ghost" id="hero-portfolio-btn">View Portfolio</a>
+                            <a href="#" class="btn btn-cyber-ghost" id="hero-resume-btn" download aria-label="Download Resume PDF">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Resume
+                            </a>
+                        </div>
+
+                        <div class="hero-stats" role="list" aria-label="Key statistics">
+                            <div class="hero-stat" role="listitem">
+                                <span class="stat-num">10+</span>
+                                <span class="stat-lbl">Years</span>
+                            </div>
+                            <div class="stat-divider" aria-hidden="true"></div>
+                            <div class="hero-stat" role="listitem">
+                                <span class="stat-num">100+</span>
+                                <span class="stat-lbl">Projects</span>
+                            </div>
+                            <div class="stat-divider" aria-hidden="true"></div>
+                            <div class="hero-stat" role="listitem">
+                                <span class="stat-num">9</span>
+                                <span class="stat-lbl">Certifications</span>
+                            </div>
+                        </div>
+
+                        <!-- Technology Badges -->
+                        <div class="tech-badges" aria-label="Core technologies">
+                            <span class="tech-badge tb-purple">Apex</span>
+                            <span class="tech-badge tb-blue">LWC</span>
+                            <span class="tech-badge tb-cyan">Integrations</span>
+                            <span class="tech-badge tb-emerald">Sales Cloud</span>
+                            <span class="tech-badge tb-pink">Service Cloud</span>
+                            <span class="tech-badge tb-purple">Admin</span>
+                            <span class="tech-badge tb-orange">Agentforce</span>
+                            <span class="tech-badge tb-blue">Einstein AI</span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Salesforce Developer Graphic -->
+                    <div class="hero-visual" aria-label="Salesforce Developer Graphic">
+                        <div class="graphic-hero-wrapper">
+                            <div class="graphic-glow-behind"></div>
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Salesforce Cloud & Developer Ecosystem" 
+                                 class="graphic-hero-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ABOUT ==================== -->
+        <section id="about" class="about-section scroll-reveal" aria-label="About me">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">About</div>
+                    <h2 class="section-title">Building the future of<br><span class="grad-text">Salesforce</span></h2>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- Intro — wide -->
+                    <div class="bento-card bento-intro">
+                        <div class="bento-icon-wrap" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M3 21v-1a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v1"/></svg>
+                        </div>
+                        <h3>Hi, I'm Srinadh</h3>
+                        <p>A Salesforce Architect with 10+ years delivering enterprise cloud solutions. I specialise in building scalable, maintainable applications — from custom Apex frameworks to AI-powered Agentforce automations — that drive real business value.</p>
+                        <p style="margin-top:12px;">Currently available for freelance and consulting engagements globally.</p>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="bento-card bento-avail">
+                        <div class="avail-badge">
+                            <span class="avail-dot-lg" aria-hidden="true"></span>
+                            <span>Open to Work</span>
+                        </div>
+                        <p>Available for freelance, consulting and project-based Salesforce engagements.</p>
+                        <a href="#contact" class="btn btn-primary btn-sm" style="margin-top:20px;">Get in Touch →</a>
+                    </div>
+
+                    <!-- Stat: Years -->
+                    <div class="bento-card bento-stat">
+                        <span class="big-num grad-text">10+</span>
+                        <span class="big-label">Years of<br>Experience</span>
+                    </div>
+
+                    <!-- Stat: Projects -->
+                    <div class="bento-card bento-stat">
+                        <span class="big-num grad-text">100+</span>
+                        <span class="big-label">Enterprise<br>Implementations</span>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div class="bento-card bento-tech">
+                        <h4>Core Technology Stack</h4>
+                        <div class="chip-wrap">
+                            <span class="chip chip-purple">Apex</span>
+                            <span class="chip chip-blue">LWC</span>
+                            <span class="chip chip-cyan">REST API</span>
+                            <span class="chip chip-emerald">Sales Cloud</span>
+                            <span class="chip chip-pink">Service Cloud</span>
+                            <span class="chip chip-orange">Agentforce</span>
+                            <span class="chip chip-purple">SOQL / SOSL</span>
+                            <span class="chip chip-blue">Flows</span>
+                            <span class="chip chip-cyan">SOAP API</span>
+                            <span class="chip chip-emerald">Experience Cloud</span>
+                            <span class="chip chip-pink">Platform Events</span>
+                            <span class="chip chip-orange">Einstein AI</span>
+                        </div>
+                    </div>
+
+                    <!-- Quote -->
+                    <div class="bento-card bento-quote">
+                        <div class="quote-mark" aria-hidden="true">"</div>
+                        <blockquote>I don't just build Salesforce applications — I build scalable digital solutions that empower businesses to achieve more.</blockquote>
+                        <cite>— Srinadh</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SKILLS ==================== -->
+        <section id="skills" class="skills-section scroll-reveal" aria-label="Technical skills">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">Expertise</div>
+                    <h2 class="section-title">Technical <span class="grad-text">Skills</span></h2>
+                    <p class="section-sub">A deep toolkit combining programmatic development with declarative automation.</p>
+                </div>
+
+                <div class="skills-grid-new" role="list">
+
+                    <div class="sk-card sk-purple" role="listitem">
+                        <div class="sk-top">
+                            <div class="sk-icon-wrap" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                            </div>
+                            <div class="sk-badges">
+                                <span class="sk-badge">EXPERT</span>
+                                <span class="sk-yr">10+ yrs</span>
+                            </div>
+                        </div>
+                        <h3>Salesforce Backend</h3>
+                        <p>Deep expertise in Apex including triggers, async processing, and enterprise design patterns.</p>
+                        <ul class="sk-pills" aria-label="Technologies">
+                            <li>Apex Triggers</li>
+                            <li>Batch Apex</li>
+                            <li>Queueable</li>
+                            <li>Custom Metadata</li>
+                        </ul>
+                    </div>
+
+                    <div class="sk-card sk-blue" role="listitem">
+                        <div class="sk-top">
+                            <div class="sk-icon-wrap" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            </div>
+                            <div class="sk-badges">
+                                <span class="sk-badge">ADVANCED</span>
+                                <span class="sk-yr">8+ yrs</span>
+                            </div>
+                        </div>
+                        <h3>UI &amp; Frontend</h3>
+                        <p>Building rich, reactive Lightning experiences with modern JavaScript and SLDS components.</p>
+                        <ul class="sk-pills" aria-label="Technologies">
+                            <li>LWC</li>
+                            <li>JavaScript ES6+</li>
+                            <li>SLDS</li>
+                            <li>Aura</li>
+                        </ul>
+                    </div>
+
+                    <div class="sk-card sk-cyan" role="listitem">
+                        <div class="sk-top">
+                            <div class="sk-icon-wrap" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"/><circle cx="8" cy="12" r="2"/></svg>
+                            </div>
+                            <div class="sk-badges">
+                                <span class="sk-badge">EXPERT</span>
+                                <span class="sk-yr">9+ yrs</span>
+                            </div>
+                        </div>
+                        <h3>APIs &amp; Integrations</h3>
+                        <p>Designing secure, scalable integrations between Salesforce and external enterprise systems.</p>
+                        <ul class="sk-pills" aria-label="Technologies">
+                            <li>REST API</li>
+                            <li>SOAP API</li>
+                            <li>Named Credentials</li>
+                            <li>Webhooks</li>
+                        </ul>
+                    </div>
+
+                    <div class="sk-card sk-emerald" role="listitem">
+                        <div class="sk-top">
+                            <div class="sk-icon-wrap" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                            </div>
+                            <div class="sk-badges">
+                                <span class="sk-badge">ADVANCED</span>
+                                <span class="sk-yr">5+ yrs</span>
+                            </div>
+                        </div>
+                        <h3>DevOps &amp; AI</h3>
+                        <p>Modern Salesforce DX workflows, CI/CD pipelines, and Agentforce AI implementations.</p>
+                        <ul class="sk-pills" aria-label="Technologies">
+                            <li>SFDX</li>
+                            <li>Git &amp; CI/CD</li>
+                            <li>Agentforce</li>
+                            <li>Einstein AI</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROJECTS ==================== -->
+        <section id="projects" class="projects-section scroll-reveal" aria-label="Featured projects">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">Portfolio</div>
+                    <h2 class="section-title">Featured <span class="grad-text">Projects</span></h2>
+                    <p class="section-sub">Real-world implementations demonstrating clean engineering and platform mastery.</p>
+                </div>
+
+                <div class="proj-grid" role="list">
+
+                    <div class="proj-card" role="listitem">
+                        <div class="proj-top">
+                            <div class="proj-meta-row">
+                                <span class="proj-category">Web Toolkit</span>
+                                <span class="proj-status live">● Live</span>
+                            </div>
+                            <div class="proj-mini-stats">
+                                <span><strong>8,500+</strong> lines</span>
+                                <span><strong>Solo</strong> creator</span>
+                                <span><strong>Continuous</strong></span>
+                            </div>
+                        </div>
+                        <h3 class="proj-name">salesforcetools.in</h3>
+                        <p class="proj-desc">A web-based utility toolkit to streamline Salesforce developer and admin workflows. Formula checkers, schema visualizers, SOQL builders, and more.</p>
+                        <div class="proj-tech-row" aria-label="Technologies used">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Web APIs</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a href="https://salesforcetools.in" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-primary" aria-label="Launch salesforcetools.in website">
+                                Launch Site
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="proj-card proj-featured" role="listitem">
+                        <div class="proj-top">
+                            <div class="proj-meta-row">
+                                <span class="proj-category">Salesforce App</span>
+                                <span class="proj-status done">✓ Completed</span>
+                            </div>
+                            <div class="proj-mini-stats">
+                                <span><strong>4,200+</strong> lines</span>
+                                <span><strong>Lead</strong> developer</span>
+                                <span><strong>4 months</strong></span>
+                            </div>
+                        </div>
+                        <h3 class="proj-name">Salesforce AI Command Center</h3>
+                        <p class="proj-desc">Enterprise-grade metadata intelligence dashboard — schema audits, governor limit monitoring, deployment simulation, and Agentforce AI prompt management.</p>
+                        <div class="proj-tech-row" aria-label="Technologies used">
+                            <span>Apex</span><span>LWC</span><span>Tooling API</span><span>Agentforce</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a href="#contact" class="proj-btn proj-btn-primary" aria-label="Request a demo of AI Command Center">
+                                Request Demo
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="proj-card" role="listitem">
+                        <div class="proj-top">
+                            <div class="proj-meta-row">
+                                <span class="proj-category">Salesforce DX</span>
+                                <span class="proj-status done">✓ Completed</span>
+                            </div>
+                            <div class="proj-mini-stats">
+                                <span><strong>1,800+</strong> lines</span>
+                                <span><strong>Architect</strong></span>
+                                <span><strong>2 months</strong></span>
+                            </div>
+                        </div>
+                        <h3 class="proj-name">Daily Sales Data Processor</h3>
+                        <p class="proj-desc">Production-ready CSV parsing and data validation engine. Rule enforcement, anomaly detection, and business metric reporting with 100% Apex test coverage.</p>
+                        <div class="proj-tech-row" aria-label="Technologies used">
+                            <span>Apex</span><span>SFDX</span><span>Static Resources</span><span>Unit Testing</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a href="#contact" class="proj-btn proj-btn-primary" aria-label="View case study for Daily Sales Data Processor">
+                                View Case Study
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Interactive Callout Demo -->
+                <div class="demo-section scroll-reveal" style="margin-top:72px;">
+                    <div class="demo-heading">
+                        <h3>Outbound Retry Callout Sandbox</h3>
+                        <p>Test the Gatekeeper engine live — generate outbound webhook payloads and observe real-time failure queues.</p>
+                    </div>
+                    <div class="visual-card dashboard-card" style="max-width:600px;margin:0 auto;">
+                        <div class="card-header">
+                            <div class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="dashboard-title">System Status Control</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="metrics-grid">
+                                <div class="metric-status-item">
+                                    <span class="metric-label">API Gateway</span>
+                                    <div class="metric-value-wrapper">
+                                        <span class="status-pulse-dot"></span>
+                                        <span class="metric-value status-online">ONLINE</span>
+                                    </div>
+                                </div>
+                                <div class="metric-status-item">
+                                    <span class="metric-label">Active Queue</span>
+                                    <span class="metric-value" id="dashQueueCount">0 PENDING</span>
+                                </div>
+                                <div class="metric-status-item">
+                                    <span class="metric-label">Avg Latency</span>
+                                    <span class="metric-value" id="dashLatencyVal">42ms</span>
+                                </div>
+                            </div>
+                            <div class="traffic-visual-container">
+                                <div class="system-nodes">
+                                    <div class="sys-node client-node active"><span class="node-icon">👤</span><span class="node-label">Client</span></div>
+                                    <div class="node-connector" id="connector1"><div class="connector-line"></div><div class="connector-pulse"></div></div>
+                                    <div class="sys-node gatekeeper-node active" style="position:relative;"><span class="node-icon">🛡️</span><div class="radar-glowing-ring"></div><span class="node-label">Gatekeeper</span></div>
+                                    <div class="node-connector" id="connector2"><div class="connector-line"></div><div class="connector-pulse"></div></div>
+                                    <div class="sys-node endpoint-node active"><span class="node-icon">🌐</span><span class="node-label">API</span></div>
+                                </div>
+                            </div>
+                            <div class="dashboard-console">
+                                <div class="dash-console-header">
+                                    <span>Real-Time Traffic Log</span>
+                                    <span class="live-tag">LIVE</span>
+                                </div>
+                                <div class="dash-console-body font-mono" id="dashConsoleLogs">
+                                    <div class="dash-log-line"><span class="log-t">[18:23:45]</span> <span class="log-cmd">OUTBOUND</span> <span class="log-status success">200 OK</span> POST /v1/payments</div>
+                                    <div class="dash-log-line"><span class="log-t">[18:23:48]</span> <span class="log-cmd">OUTBOUND</span> <span class="log-status success">200 OK</span> GET /v1/customers</div>
+                                    <div class="dash-log-line"><span class="log-t">[18:23:55]</span> <span class="log-cmd">SYSTEM</span> <span class="log-status success">ACTIVE</span> Monitoring callout gatekeeper...</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" id="btnSimulateTraffic" style="margin-top:16px;width:100%;">Simulate Live Traffic</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CERTIFICATIONS ==================== -->
+        <section id="certifications" class="certs-section scroll-reveal" aria-label="Certifications and credentials">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">Credentials</div>
+                    <h2 class="section-title">Salesforce <span class="grad-text">Certifications</span></h2>
+                    <p class="section-sub">9 official Salesforce credentials validating deep technical and architectural expertise.</p>
+                </div>
+
+                <div class="cert-grid-new" role="list">
+
+                    <div class="cert-card-new cert-arch" role="listitem">
+                        <div class="cert-ribbon-tag">ARCHITECT</div>
+                        <div class="cert-icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+                        <h4>Application Architect</h4>
+                        <p>Salesforce Certified · 2024</p>
+                        <span class="cert-badge-active" aria-label="Status: Active and verified">✓ Active &amp; Verified</span>
+                    </div>
+
+                    <div class="cert-card-new cert-arch" role="listitem">
+                        <div class="cert-ribbon-tag">ARCHITECT</div>
+                        <div class="cert-icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+                        <h4>System Architect</h4>
+                        <p>Salesforce Certified · 2024</p>
+                        <span class="cert-badge-active">✓ Active &amp; Verified</span>
+                    </div>
+
+                    <div class="cert-card-new cert-arch" role="listitem">
+                        <div class="cert-ribbon-tag">ARCHITECT</div>
+                        <div class="cert-icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+                        <h4>Integration Architect</h4>
+                        <p>Salesforce Certified · 2023</p>
+                        <span class="cert-badge-active">✓ Active &amp; Verified</span>
+                    </div>
+
+                    <div class="cert-card-new cert-arch" role="listitem">
+                        <div class="cert-ribbon-tag">ARCHITECT</div>
+                        <div class="cert-icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                        <h4>Sharing &amp; Visibility</h4>
+                        <p>Salesforce Certified · 2023</p>
+                        <span class="cert-badge-active">✓ Active &amp; Verified</span>
+                    </div>
+
+                    <div class="cert-card-new cert-dev" role="listitem">
+                        <div class="cert-ribbon-tag cert-ribbon-blue">DEVELOPER</div>
+                        <div class="cert-icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                        <h4>Platform Developer II</h4>
+                        <p>Salesforce Certified · 2022</p>
+                        <span class="cert-badge-active">✓ Active &amp; Verified</span>
+                    </div>
+
+                    <div class="cert-card-new cert-dev" role="listitem">
+                        <div class="cert-ribbon-tag cert-ribbon-blue">DEVELOPER</div>
+                        <div class="cert-icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                        <h4>Platform Developer I</h4>
+                        <p>Salesforce Certified · 2021</p>
+                        <span class="cert-badge-active">✓ Active &amp; Verified</span>
+                    </div>
+
+                    <div class="cert-card-new cert-dev" role="listitem">
+                        <div class="cert-ribbon-tag cert-ribbon-blue">DEVELOPER</div>
+                        <div class="cert-icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h18c1.1 0 2 .9 2 2v12z"/><line x1="6" y1="6" x2="6" y2="18"/><line x1="10" y1="6" x2="10" y2="18"/></svg></div>
+                        <h4>JavaScript Developer I</h4>
+                        <p>Salesforce Certified · 2021</p>
+                        <span class="cert-badge-active">✓ Active &amp; Verified</span>
+                    </div>
+
+                    <div class="cert-card-new cert-platform" role="listitem">
+                        <div class="cert-ribbon-tag cert-ribbon-cyan">PLATFORM</div>
+                        <div class="cert-icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+                        <h4>Platform App Builder</h4>
+                        <p>Salesforce Certified · 2020</p>
+                        <span class="cert-badge-active">✓ Active &amp; Verified</span>
+                    </div>
+
+                    <div class="cert-card-new cert-platform" role="listitem">
+                        <div class="cert-ribbon-tag cert-ribbon-cyan">ADMIN</div>
+                        <div class="cert-icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg></div>
+                        <h4>Administrator</h4>
+                        <p>Salesforce Certified · 2019</p>
+                        <span class="cert-badge-active">✓ Active &amp; Verified</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT ==================== -->
+        <section id="contact" class="contact-section scroll-reveal" aria-label="Contact form">
+            <div class="container">
+                <div class="contact-grid">
+
+                    <div class="contact-info-side">
+                        <div class="section-tag">Contact</div>
+                        <h2 class="section-title">Let's Build<br><span class="grad-text">Together</span></h2>
+                        <p class="contact-desc">Have a Salesforce project in mind? Need expert consulting or a custom solution? Let's connect and make it happen.</p>
+
+                        <div class="contact-items">
+                            <a href="https://wa.me/919948152545" target="_blank" rel="noopener noreferrer" class="contact-item wa-item" aria-label="Connect on WhatsApp">
+                                <div class="ci-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                                </div>
+                                <span>Connect on WhatsApp</span>
+                            </a>
+                            <a href="mailto:srinadh.sfdc9@gmail.com" class="contact-item email-item" aria-label="Send an Email">
+                                <div class="ci-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <span>srinadh.sfdc9@gmail.com</span>
+                            </a>
+                            <a href="https://github.com/srinadhsfdc9-creator" target="_blank" rel="noopener noreferrer" class="contact-item github-item" aria-label="View GitHub Profile">
+                                <div class="ci-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                </div>
+                                <span>View GitHub Profile</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-side">
+                        <form id="contactForm" class="contact-form-new" novalidate aria-label="Contact form">
+                            <div class="field-group">
+                                <input type="text" id="nameInput" name="name" placeholder=" " required autocomplete="name" aria-label="Your name" aria-required="true">
+                                <label for="nameInput">Your Name</label>
+                            </div>
+                            <div class="field-group">
+                                <input type="email" id="emailInput" name="email" placeholder=" " required autocomplete="email" aria-label="Your email address" aria-required="true">
+                                <label for="emailInput">Email Address</label>
+                            </div>
+                            <div class="field-group">
+                                <textarea id="messageInput" name="message" placeholder=" " required rows="5" autocomplete="off" aria-label="Your message" aria-required="true"></textarea>
+                                <label for="messageInput">Your Message</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full" aria-label="Send message">
+                                Send Message
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                            <div id="formMessage" class="form-feedback" role="status" aria-live="polite"></div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-inner">
+            <p>&copy; 2026 salesforcetools.in · All rights reserved.</p>
+            <p>Built with ❤️ for the Salesforce Ecosystem</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
