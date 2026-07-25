@@ -6,16 +6,68 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================
-    // 1. Header Scroll Effect
+    // 1. Unified High-Performance Scroll Controller (60fps/120fps scrolling)
     // ==========================================
     const header = document.getElementById('siteHeader');
-    const onScroll = () => {
+    const backToTopBtn = document.getElementById('backToTop');
+    const sections  = Array.from(document.querySelectorAll('section[id]'));
+    const navLinks  = Array.from(document.querySelectorAll('.nav-link'));
+    let sectionOffsets = [];
+    let lastActiveSection = '';
+
+    const cacheOffsets = () => {
+        sectionOffsets = sections.map(sec => ({
+            id: sec.id,
+            top: sec.offsetTop
+        }));
+    };
+
+    cacheOffsets();
+    window.addEventListener('load', cacheOffsets, { passive: true });
+    window.addEventListener('resize', cacheOffsets, { passive: true });
+
+    let isScrolling = false;
+    const handleScroll = () => {
+        const scrollPos = window.scrollY;
+
+        // A. Header scroll effect
         if (header) {
-            header.classList.toggle('scrolled', window.scrollY > 20);
+            header.classList.toggle('scrolled', scrollPos > 20);
+        }
+
+        // B. Back to top button visibility
+        if (backToTopBtn) {
+            backToTopBtn.classList.toggle('visible', scrollPos > 400);
+        }
+
+        // C. Active Nav Link on Scroll
+        let current = '';
+        for (let i = 0; i < sectionOffsets.length; i++) {
+            if (scrollPos >= sectionOffsets[i].top - 110) {
+                current = sectionOffsets[i].id;
+            }
+        }
+        if (current !== lastActiveSection) {
+            lastActiveSection = current;
+            navLinks.forEach(link => {
+                const matches = link.getAttribute('href') === `#${current}`;
+                link.classList.toggle('active', matches);
+            });
         }
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+
+    window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                handleScroll();
+                isScrolling = false;
+            });
+            isScrolling = true;
+        }
+    }, { passive: true });
+
+    // Initial check
+    handleScroll();
 
     // ==========================================
     // 2. Mobile Navigation Toggle
@@ -40,44 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==========================================
-    // 3. Active Nav Link on Scroll (Optimized with Cached Offsets)
-    // ==========================================
-    const sections  = Array.from(document.querySelectorAll('section[id]'));
-    const navLinks  = Array.from(document.querySelectorAll('.nav-link'));
-    let sectionOffsets = [];
-    let lastActiveSection = '';
-
-    const cacheOffsets = () => {
-        sectionOffsets = sections.map(sec => ({
-            id: sec.id,
-            top: sec.offsetTop
-        }));
-    };
-
-    cacheOffsets();
-    window.addEventListener('load', cacheOffsets, { passive: true });
-    window.addEventListener('resize', cacheOffsets, { passive: true });
-
-    const updateActiveLink = () => {
-        let current = '';
-        const scrollPos = window.scrollY;
-        for (let i = 0; i < sectionOffsets.length; i++) {
-            if (scrollPos >= sectionOffsets[i].top - 110) {
-                current = sectionOffsets[i].id;
-            }
-        }
-        if (current !== lastActiveSection) {
-            lastActiveSection = current;
-            navLinks.forEach(link => {
-                const matches = link.getAttribute('href') === `#${current}`;
-                link.classList.toggle('active', matches);
-            });
-        }
-    };
-
-    window.addEventListener('scroll', updateActiveLink, { passive: true });
-    updateActiveLink();
+    // (Active Nav Links are now managed by the Unified Scroll Controller above)
 
 
 
@@ -218,14 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTopBtn = document.getElementById('backToTop');
 
     if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        }, { passive: true });
-
+        // Visibility is now managed by the Unified Scroll Controller at the top
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
