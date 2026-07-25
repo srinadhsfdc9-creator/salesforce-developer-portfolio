@@ -98,26 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 7. Card Subtle 3D Tilt Effect
-    // ==========================================
-    const tiltTargets = document.querySelectorAll('.sk-card, .proj-card, .cert-card-new, .svc-card');
-
-    tiltTargets.forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect    = card.getBoundingClientRect();
-            const cx      = rect.width  / 2;
-            const cy      = rect.height / 2;
-            const rx      = ((e.clientY - rect.top  - cy) / cy) * -5;
-            const ry      = ((e.clientX - rect.left - cx) / cx) *  5;
-            card.style.transform = `translateY(-5px) perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
-    });
-
-    // ==========================================
     // 8. Contact Form Handler (Web3Forms Integration)
     // ==========================================
     const WEB3FORMS_ACCESS_KEY = "12a9abd9-212e-4104-89c0-cb80e1642c16"; // Get your free key at https://web3forms.com
