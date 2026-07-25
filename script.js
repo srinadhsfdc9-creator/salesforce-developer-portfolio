@@ -133,8 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // 8. Contact Form Handler
+    // 8. Contact Form Handler (Web3Forms Integration)
     // ==========================================
+    const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE"; // Get your free key at https://web3forms.com
     const contactForm = document.getElementById('contactForm');
     const formMsg     = document.getElementById('formMessage');
 
@@ -158,13 +159,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Simulate success (connect to real backend as needed)
-            formMsg.textContent = '✓ Message sent! I\'ll reply within 24 hours.';
-            formMsg.className   = 'form-feedback success';
-            contactForm.reset();
+            // Fallback simulation mode if the key is not yet set
+            if (WEB3FORMS_ACCESS_KEY === "YOUR_ACCESS_KEY_HERE") {
+                formMsg.textContent = '✓ (Demo Mode) Message sent! Paste your Web3Forms Access Key in script.js to receive real emails.';
+                formMsg.className   = 'form-feedback success';
+                contactForm.reset();
+                setTimeout(() => { formMsg.textContent = ''; formMsg.className = 'form-feedback'; }, 6000);
+                return;
+            }
 
-            // Reset feedback after 6 seconds
-            setTimeout(() => { formMsg.textContent = ''; formMsg.className = 'form-feedback'; }, 6000);
+            formMsg.textContent = 'Sending message...';
+            formMsg.className   = 'form-feedback';
+
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    name: name,
+                    email: email,
+                    message: message,
+                    subject: `New Portfolio Message from ${name}`
+                })
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    formMsg.textContent = '✓ Message sent! I\'ll reply within 24 hours.';
+                    formMsg.className   = 'form-feedback success';
+                    contactForm.reset();
+                } else {
+                    formMsg.textContent = json.message || 'Something went wrong. Please try again.';
+                    formMsg.className   = 'form-feedback error';
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+                formMsg.textContent = 'Something went wrong. Please try again.';
+                formMsg.className   = 'form-feedback error';
+            })
+            .then(() => {
+                setTimeout(() => {
+                    formMsg.textContent = '';
+                    formMsg.className = 'form-feedback';
+                }, 6000);
+            });
         });
     }
 
