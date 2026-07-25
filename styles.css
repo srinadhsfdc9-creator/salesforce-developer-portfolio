@@ -2473,3 +2473,185 @@ body::after {
     /* Increase background opacity slightly to maintain visual contrast without the blur */
     background: rgba(8, 13, 32, 0.97) !important;
 }
+
+/* ==================== THEME TOGGLE & LIGHT MODE ==================== */
+:root {
+    --transition-theme: background-color var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease), color var(--dur-med) var(--ease);
+}
+
+/* Base body transition */
+body {
+    transition: var(--transition-theme);
+}
+
+/* Light Theme Variables */
+body.light-theme {
+    --bg-0: #F8FAFC;
+    --bg-1: #F1F5F9;
+    --bg-2: #E2E8F0;
+    --bg-3: #F8FAFC;
+
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --card-border: rgba(15, 23, 42, 0.08);
+    --card-border-hover: rgba(124, 58, 237, 0.25);
+
+    --txt-0: #0F172A;
+    --txt-1: #1E293B;
+    --txt-2: #334155;
+    --txt-3: #475569;
+    --txt-4: #64748B;
+}
+
+/* Light Theme element overrides */
+body.light-theme .header.scrolled {
+    background: rgba(248, 250, 252, 0.9);
+    box-shadow: 0 1px 0 rgba(15, 23, 42, 0.08);
+}
+body.light-theme .nav-link:hover, 
+body.light-theme .nav-link.active {
+    background: rgba(15, 23, 42, 0.04);
+}
+body.light-theme .grid-overlay {
+    background-image:
+        linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+}
+body.light-theme .sk-card,
+body.light-theme .proj-card,
+body.light-theme .cert-card-new,
+body.light-theme .bento-card,
+body.light-theme .contact-item,
+body.light-theme .contact-form-side,
+body.light-theme .sf-hub-core,
+body.light-theme .orb-card {
+    background: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+}
+body.light-theme .sk-card:hover,
+body.light-theme .proj-card:hover,
+body.light-theme .cert-card-new:hover,
+body.light-theme .bento-card:hover {
+    border-color: var(--card-border-hover) !important;
+}
+body.light-theme .contact-form-new input,
+body.light-theme .contact-form-new textarea {
+    background: #FFFFFF;
+    border-color: rgba(15, 23, 42, 0.12);
+    color: var(--txt-0);
+}
+body.light-theme .contact-form-new label {
+    color: var(--txt-4);
+}
+body.light-theme .contact-form-new input:focus ~ label,
+body.light-theme .contact-form-new input:not(:placeholder-shown) ~ label,
+body.light-theme .contact-form-new textarea:focus ~ label,
+body.light-theme .contact-form-new textarea:not(:placeholder-shown) ~ label {
+    color: var(--clr-purple);
+}
+body.light-theme .btn-cyber-ghost {
+    background: rgba(15, 23, 42, 0.03);
+    border-color: rgba(15, 23, 42, 0.08);
+    color: var(--txt-2);
+}
+body.light-theme .btn-cyber-ghost:hover {
+    background: rgba(15, 23, 42, 0.06);
+    color: var(--txt-0);
+}
+body.light-theme .btn-ghost {
+    background: rgba(15, 23, 42, 0.03);
+    border-color: rgba(15, 23, 42, 0.08);
+}
+body.light-theme .btn-ghost:hover {
+    background: rgba(15, 23, 42, 0.06);
+}
+body.light-theme .tech-badge {
+    background: rgba(15, 23, 42, 0.03);
+    border-color: rgba(15, 23, 42, 0.06);
+}
+body.light-theme .logo-bracket {
+    color: var(--txt-4);
+}
+body.light-theme .stat-divider {
+    background: var(--card-border);
+}
+body.light-theme .footer {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    background: #F1F5F9;
+}
+body.light-theme .cert-ribbon-tag {
+    color: #FFF !important;
+}
+body.light-theme .cert-ribbon-tag:not(.cert-ribbon-blue):not(.cert-ribbon-cyan) {
+    background: var(--clr-purple);
+}
+
+/* Theme Toggle Button Style */
+.theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--card-border);
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--txt-2);
+    transition: all var(--dur-fast) ease;
+    flex-shrink: 0;
+}
+.theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--txt-0);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+body.light-theme .theme-toggle-btn {
+    background: rgba(15, 23, 42, 0.03);
+    border-color: rgba(15, 23, 42, 0.08);
+}
+body.light-theme .theme-toggle-btn:hover {
+    background: rgba(15, 23, 42, 0.06);
+    color: var(--txt-0);
+}
+
+/* Icon visibility logic */
+.theme-toggle-btn .sun-icon { display: block; }
+.theme-toggle-btn .moon-icon { display: none; }
+body.light-theme .theme-toggle-btn .sun-icon { display: none; }
+body.light-theme .theme-toggle-btn .moon-icon { display: block; }
+
+/* Back to Top Button Style */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--grad);
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s var(--ease-spring);
+    z-index: 800;
+}
+.back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.back-to-top-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.55);
+}
+.back-to-top-btn:active {
+    transform: translateY(-1px) scale(0.96);
+}

@@ -138,9 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(async (response) => {
                 let json = await response.json();
                 if (response.status == 200) {
-                    formMsg.textContent = '✓ Message sent! I\'ll reply within 24 hours.';
+                    formMsg.textContent = '🎉 Message sent! I\'ll reply within 24 hours.';
                     formMsg.className   = 'form-feedback success';
                     contactForm.reset();
+                    triggerConfetti();
                 } else {
                     formMsg.textContent = json.message || 'Something went wrong. Please try again.';
                     formMsg.className   = 'form-feedback error';
@@ -192,5 +193,119 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==========================================
+    // 11. Dark/Light Theme Switcher
+    // ==========================================
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+
+    // Apply saved theme on load
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const isLight = document.body.classList.toggle('light-theme');
+            localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+        });
+    }
+
+    // ==========================================
+    // 12. Back to Top Button
+    // ==========================================
+    const backToTopBtn = document.getElementById('backToTop');
+
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // ==========================================
+    // 13. Confetti Success Animation
+    // ==========================================
+    window.triggerConfetti = function() {
+        const canvas = document.createElement('canvas');
+        canvas.style.position = 'fixed';
+        canvas.style.inset = '0';
+        canvas.style.width = '100vw';
+        canvas.style.height = '100vh';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '99999';
+        document.body.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }, { passive: true });
+
+        const colors = ['#7C3AED', '#2563EB', '#06B6D4', '#10B981', '#F59E0B', '#EC4899'];
+        const particles = [];
+
+        for (let i = 0; i < 80; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * -height - 20,
+                r: Math.random() * 6 + 4,
+                d: Math.random() * 100 + 40,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                tilt: Math.random() * 10 - 5,
+                tiltAngleIncremental: Math.random() * 0.07 + 0.02,
+                tiltAngle: 0
+            });
+        }
+
+        let animationFrame;
+        function draw() {
+            ctx.clearRect(0, 0, width, height);
+            let remaining = false;
+
+            particles.forEach(p => {
+                p.tiltAngle += p.tiltAngleIncremental;
+                p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+                p.x += Math.sin(p.tiltAngle);
+                p.tilt = Math.sin(p.tiltAngle - (particles.indexOf(p) / 3)) * 15;
+
+                if (p.y <= height) {
+                    remaining = true;
+                    ctx.beginPath();
+                    ctx.lineWidth = p.r;
+                    ctx.strokeStyle = p.color;
+                    ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+                    ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+                    ctx.stroke();
+                }
+            });
+
+            if (remaining) {
+                animationFrame = requestAnimationFrame(draw);
+            } else {
+                canvas.remove();
+            }
+        }
+
+        draw();
+        setTimeout(() => {
+            cancelAnimationFrame(animationFrame);
+            canvas.remove();
+        }, 5000);
+    };
 
 });
