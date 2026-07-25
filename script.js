@@ -41,16 +41,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 3. Active Nav Link on Scroll
+    // 3. Active Nav Link on Scroll (Optimized with Cached Offsets)
     // ==========================================
     const sections  = Array.from(document.querySelectorAll('section[id]'));
     const navLinks  = Array.from(document.querySelectorAll('.nav-link'));
+    let sectionOffsets = [];
+
+    const cacheOffsets = () => {
+        sectionOffsets = sections.map(sec => ({
+            id: sec.id,
+            top: sec.offsetTop
+        }));
+    };
+
+    cacheOffsets();
+    window.addEventListener('resize', cacheOffsets, { passive: true });
 
     const updateActiveLink = () => {
         let current = '';
-        sections.forEach(sec => {
-            if (window.scrollY >= sec.offsetTop - 110) current = sec.id;
-        });
+        const scrollPos = window.scrollY;
+        for (let i = 0; i < sectionOffsets.length; i++) {
+            if (scrollPos >= sectionOffsets[i].top - 110) {
+                current = sectionOffsets[i].id;
+            }
+        }
         navLinks.forEach(link => {
             const matches = link.getAttribute('href') === `#${current}`;
             link.classList.toggle('active', matches);
@@ -60,10 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveLink, { passive: true });
     updateActiveLink();
 
-
-
     // ==========================================
-    // 5. Cursor Glow Effect
+    // 5. Cursor Glow Effect (Optimized with translate3d for GPU compositor)
     // ==========================================
     const cursorGlow = document.getElementById('cursor-glow');
     if (cursorGlow) {
@@ -79,8 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const animGlow = () => {
             gx = lerp(gx, mx, 0.07);
             gy = lerp(gy, my, 0.07);
-            cursorGlow.style.left = gx + 'px';
-            cursorGlow.style.top  = gy + 'px';
+            cursorGlow.style.transform = `translate3d(calc(${gx}px - 50%), calc(${gy}px - 50%), 0)`;
             requestAnimationFrame(animGlow);
         };
 
