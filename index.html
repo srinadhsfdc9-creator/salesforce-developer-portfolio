@@ -375,6 +375,11 @@
                         </div>
                         <h3 class="proj-name">Schema Explorer</h3>
                         <p class="proj-desc">A Manifest V3 sidebar extension enabling developers to discover relationship paths (Lookup/Master-Detail) between Salesforce objects, auto-generate SOQL queries, and inspect field metadata using active session cookies.</p>
+                        <div class="proj-gallery">
+                            <img src="assets/schema-explorer-1.png" alt="Schema Explorer Relationship Finder" class="proj-gallery-img">
+                            <img src="assets/schema-explorer-2.png" alt="Schema Explorer Record Finder" class="proj-gallery-img">
+                            <img src="assets/schema-explorer-3.png" alt="Schema Explorer SOQL Runner" class="proj-gallery-img">
+                        </div>
                         <div class="proj-tech-row" aria-label="Technologies used">
                             <span>JavaScript</span><span>Chrome APIs</span><span>SOQL</span><span>REST Describe API</span>
                         </div>
@@ -675,6 +680,12 @@
             <p>Built with ❤️ for the Salesforce Ecosystem</p>
         </div>
     </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageLightbox" class="lightbox-modal" aria-hidden="true">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightboxImg" src="" alt="Enlarged screenshot">
+    </div>
 
     <script src="script.js"></script>
 </body>

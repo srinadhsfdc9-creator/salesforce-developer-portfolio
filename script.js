@@ -288,4 +288,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
+    // 10. Image Lightbox
+    // ==========================================
+    const lightbox    = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn    = document.querySelector('.lightbox-close');
+
+    if (lightbox && lightboxImg) {
+        document.querySelectorAll('.proj-gallery-img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden'; // Lock scroll
+            });
+        });
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = ''; // Unlock scroll
+            setTimeout(() => { lightboxImg.src = ''; }, 250);
+        };
+
+        lightbox.addEventListener('click', closeLightbox);
+        closeBtn?.addEventListener('click', closeLightbox);
+        
+        // Close with escape key
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+                closeLightbox();
+            }
+        });
+    }
+
 });
