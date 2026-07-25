@@ -464,63 +464,6 @@
 
                 </div>
 
-                <!-- Interactive Callout Demo -->
-                <div class="demo-section scroll-reveal" style="margin-top:72px;">
-                    <div class="demo-heading">
-                        <h3>Outbound Retry Callout Sandbox</h3>
-                        <p>Test the Gatekeeper engine live — generate outbound webhook payloads and observe real-time failure queues.</p>
-                    </div>
-                    <div class="visual-card dashboard-card" style="max-width:600px;margin:0 auto;">
-                        <div class="card-header">
-                            <div class="window-dots">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
-                            </div>
-                            <div class="dashboard-title">System Status Control</div>
-                        </div>
-                        <div class="card-body">
-                            <div class="metrics-grid">
-                                <div class="metric-status-item">
-                                    <span class="metric-label">API Gateway</span>
-                                    <div class="metric-value-wrapper">
-                                        <span class="status-pulse-dot"></span>
-                                        <span class="metric-value status-online">ONLINE</span>
-                                    </div>
-                                </div>
-                                <div class="metric-status-item">
-                                    <span class="metric-label">Active Queue</span>
-                                    <span class="metric-value" id="dashQueueCount">0 PENDING</span>
-                                </div>
-                                <div class="metric-status-item">
-                                    <span class="metric-label">Avg Latency</span>
-                                    <span class="metric-value" id="dashLatencyVal">42ms</span>
-                                </div>
-                            </div>
-                            <div class="traffic-visual-container">
-                                <div class="system-nodes">
-                                    <div class="sys-node client-node active"><span class="node-icon">👤</span><span class="node-label">Client</span></div>
-                                    <div class="node-connector" id="connector1"><div class="connector-line"></div><div class="connector-pulse"></div></div>
-                                    <div class="sys-node gatekeeper-node active" style="position:relative;"><span class="node-icon">🛡️</span><div class="radar-glowing-ring"></div><span class="node-label">Gatekeeper</span></div>
-                                    <div class="node-connector" id="connector2"><div class="connector-line"></div><div class="connector-pulse"></div></div>
-                                    <div class="sys-node endpoint-node active"><span class="node-icon">🌐</span><span class="node-label">API</span></div>
-                                </div>
-                            </div>
-                            <div class="dashboard-console">
-                                <div class="dash-console-header">
-                                    <span>Real-Time Traffic Log</span>
-                                    <span class="live-tag">LIVE</span>
-                                </div>
-                                <div class="dash-console-body font-mono" id="dashConsoleLogs">
-                                    <div class="dash-log-line"><span class="log-t">[18:23:45]</span> <span class="log-cmd">OUTBOUND</span> <span class="log-status success">200 OK</span> POST /v1/payments</div>
-                                    <div class="dash-log-line"><span class="log-t">[18:23:48]</span> <span class="log-cmd">OUTBOUND</span> <span class="log-status success">200 OK</span> GET /v1/customers</div>
-                                    <div class="dash-log-line"><span class="log-t">[18:23:55]</span> <span class="log-cmd">SYSTEM</span> <span class="log-status success">ACTIVE</span> Monitoring callout gatekeeper...</div>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary" id="btnSimulateTraffic" style="margin-top:16px;width:100%;">Simulate Live Traffic</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
