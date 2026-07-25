@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 8. Contact Form Handler (Web3Forms Integration)
     // ==========================================
-    const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE"; // Get your free key at https://web3forms.com
+    const WEB3FORMS_ACCESS_KEY = "12a9abd9-212e-4104-89c0-cb80e1642c16"; // Get your free key at https://web3forms.com
     const contactForm = document.getElementById('contactForm');
     const formMsg     = document.getElementById('formMessage');
 
