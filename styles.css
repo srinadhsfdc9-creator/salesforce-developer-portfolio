@@ -2085,6 +2085,31 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
     animation: cyberPulse 2s infinite alternate;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cyber-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 25%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(25deg);
+    animation: portfolio-btn-shimmer 3s infinite ease-in-out;
+}
+
+@keyframes portfolio-btn-shimmer {
+    0% { left: -60%; }
+    35% { left: 140%; }
+    100% { left: 140%; }
 }
 
 @keyframes cyberPulse {
