@@ -74,32 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveLink, { passive: true });
     updateActiveLink();
 
-    // ==========================================
-    // 5. Cursor Glow Effect (Optimized with translate3d for GPU compositor)
-    // ==========================================
-    const cursorGlow = document.getElementById('cursor-glow');
-    if (cursorGlow) {
-        let mx = 0, my = 0, gx = 0, gy = 0;
-
-        document.addEventListener('mousemove', e => {
-            mx = e.clientX;
-            my = e.clientY;
-        }, { passive: true });
-
-        const lerp = (a, b, t) => a + (b - a) * t;
-
-        const animGlow = () => {
-            gx = lerp(gx, mx, 0.07);
-            gy = lerp(gy, my, 0.07);
-            cursorGlow.style.transform = `translate3d(calc(${gx}px - 50%), calc(${gy}px - 50%), 0)`;
-            requestAnimationFrame(animGlow);
-        };
-
-        animGlow();
-
-        document.addEventListener('mouseleave', () => { cursorGlow.style.opacity = '0'; });
-        document.addEventListener('mouseenter', () => { cursorGlow.style.opacity = '1'; });
-    }
 
     // ==========================================
     // 6. Scroll Reveal (IntersectionObserver)

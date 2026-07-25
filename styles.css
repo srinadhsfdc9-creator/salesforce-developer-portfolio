@@ -213,19 +213,6 @@ body::after {
 
 
 
-/* ==================== CURSOR GLOW ==================== */
-#cursor-glow {
-    position: fixed;
-    top: 0; left: 0;
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.055) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-    will-change: transform;
-    transition: opacity 0.35s ease;
-}
 
 /* ==================== BUTTONS ==================== */
 .btn {
