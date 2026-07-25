@@ -75,27 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveLink();
 
 
-    // ==========================================
-    // 6. Scroll Reveal (IntersectionObserver)
-    // ==========================================
-    const revealEls = document.querySelectorAll('.scroll-reveal');
 
-    if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('revealed');
-                    }, i * 70);
-                    obs.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-        revealEls.forEach(el => observer.observe(el));
-    } else {
-        revealEls.forEach(el => el.classList.add('revealed'));
-    }
 
     // ==========================================
     // 8. Contact Form Handler (Web3Forms Integration)

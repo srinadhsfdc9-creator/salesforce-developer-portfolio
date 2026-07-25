@@ -424,14 +424,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Scroll Reveal */
 .scroll-reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
-}
-
-.scroll-reveal.revealed {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 /* ==================== HERO SECTION ==================== */
