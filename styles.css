@@ -2446,3 +2446,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .lightbox-close:hover {
     color: #fff;
 }
+
+/* ==========================================
+   PERFORMANCE TUNING OVERRIDES (ELIMINATE SCROLL LAG)
+   ========================================== */
+
+/* 1. Disable expensive noise overlay */
+body::after {
+    display: none !important;
+}
+
+/* 2. Disable heavy backdrop-filter blurs on multiple scrolling cards/surfaces */
+.sk-card,
+.proj-card,
+.cert-card-new,
+.bento-card,
+.bento-cell,
+.svc-card,
+.contact-item,
+.contact-form-side,
+.graphic-hero-wrapper,
+.sf-hub-core,
+.orb-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    /* Increase background opacity slightly to maintain visual contrast without the blur */
+    background: rgba(8, 13, 32, 0.97) !important;
+}

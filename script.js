@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections  = Array.from(document.querySelectorAll('section[id]'));
     const navLinks  = Array.from(document.querySelectorAll('.nav-link'));
     let sectionOffsets = [];
+    let lastActiveSection = '';
 
     const cacheOffsets = () => {
         sectionOffsets = sections.map(sec => ({
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     cacheOffsets();
+    window.addEventListener('load', cacheOffsets, { passive: true });
     window.addEventListener('resize', cacheOffsets, { passive: true });
 
     const updateActiveLink = () => {
@@ -65,10 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 current = sectionOffsets[i].id;
             }
         }
-        navLinks.forEach(link => {
-            const matches = link.getAttribute('href') === `#${current}`;
-            link.classList.toggle('active', matches);
-        });
+        if (current !== lastActiveSection) {
+            lastActiveSection = current;
+            navLinks.forEach(link => {
+                const matches = link.getAttribute('href') === `#${current}`;
+                link.classList.toggle('active', matches);
+            });
+        }
     };
 
     window.addEventListener('scroll', updateActiveLink, { passive: true });
