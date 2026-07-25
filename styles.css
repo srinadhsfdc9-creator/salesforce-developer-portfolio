@@ -1260,7 +1260,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .proj-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
@@ -1419,6 +1419,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     background: rgba(124,58,237,0.2);
     border-color: rgba(124,58,237,0.5);
     color: #c4b5fd;
+    transform: translateX(2px);
+}
+
+.proj-btn-secondary {
+    background: rgba(6,182,212,0.1);
+    color: #22d3ee;
+    border: 1px solid rgba(6,182,212,0.25);
+}
+
+.proj-btn-secondary:hover {
+    background: rgba(6,182,212,0.2);
+    border-color: rgba(6,182,212,0.5);
+    color: #67e8f9;
     transform: translateX(2px);
 }
 
